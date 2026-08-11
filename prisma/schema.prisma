@@ -44,9 +44,18 @@ model Address {
 
 model Orders {
   id String @id @default(cuid())
+  customerId String
+
+    customer Customer @relation(fields: [customerId], references: [id])
+
 }
 
 model Reviews {
   id String @id @default(cuid())
+
+    customerId String
+
+    customer Customer @relation(fields: [customerId], references: [id])
+
 }
 
