@@ -30,7 +30,7 @@ model Customer {
 
 model Address {
   id String @id @default(cuid())
-  customerId Int
+  customerId String
 
   street String
   city String
@@ -40,5 +40,13 @@ model Address {
 
   customer Customer @relation(fields: [customerId], references: [id])
 
+}
+
+model Orders {
+  id String @id @default(cuid())
+}
+
+model Reviews {
+  id String @id @default(cuid())
 }
 
